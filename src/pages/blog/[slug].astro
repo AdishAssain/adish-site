@@ -1,0 +1,32 @@
+---
+import { GLOBAL } from "../../lib/variables";
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/common/Section.astro";
+import { articles } from "../../lib/list";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+const { slug } = Astro.params;
+const article = articles.find(
+  (a) => a.filename === `/blog/${slug}`
+);
+
+if (!article) {
+  return Astro.redirect("/404");
+}
+
+const frontmatter = {
+  title: article.title,
+  description: article.description,
+  tags: article.tags,
+  time: article.time,
+  featured: article.featured,
+  timestamp: article.timestamp,
+  filename: article.filename.replace('/blog/', ''),
+  file: Astro.request.url,
+  url: Astro.request.url,
+};
+---
+
+<BlogLayout frontmatter={frontmatter}>
+  <slot />
+</BlogLayout> 

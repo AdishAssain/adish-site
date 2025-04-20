@@ -49,3 +49,8 @@ export const projects = (
   const dateB = new Date(b.timestamp);
   return dateB.getTime() - dateA.getTime();
 });
+
+export const resources = import.meta.glob<{ frontmatter: ProjectFrontmatter }>(
+  "../pages/resources/**/*.md",
+  { eager: true }
+);

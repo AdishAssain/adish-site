@@ -2,15 +2,15 @@
 
 export const GLOBAL = {
   // Site metadata
-  username: "Zaggonaut",
+  username: "Adish",
   rootUrl: "https://zaggonaut.dev",
-  shortDescription: "Retro-Inspired Theme &<br /> Built for Astro",
-  longDescription: "Zaggonaut is a retro-inspired theme for Astro, built using TypeScript, TailwindCSS, and Astro.",
+  shortDescription: "Data Science Fellow at ARTPARK-IISc",
+  longDescription: "Personal website of Adish Assain Illikkal - Data Science Fellow at ARTPARK-IISc",
   
   // Social media links
-  githubProfile: "https://github.com/RATIU5/zaggonaut",
-  twitterProfile: "https://twitter.com/",
-  linkedinProfile: "https://www.linkedin.com/",
+  githubProfile: "https://github.com/AdishAssain",
+  twitterProfile: "https://x.com/adishillikkal",
+  linkedinProfile: "https://linkedin.com/in/adishassain",
   
   // Common text names used throughout the site
   articlesName: "Articles",
@@ -22,22 +22,28 @@ export const GLOBAL = {
   noProjects: "No featured projects yet.",
 
   // Blog metadata
-  blogTitle: "My Thoughts & Takes",
-  blogShortDescription: "Practical wisdom, unfiltered thoughts, and hot takes.",
-  blogLongDescription: "Web development, tech trends, and the occasional programming mishap.",
+  blogTitle: "Conflicts and Conversations",
+  blogShortDescription: "I am Adish Assain Illikkal, with a background in mathematical modelling and interdisciplinary science.",
+  blogLongDescription: "",
 
   // Project metadata
   projectTitle: "Projects and Code",
-  projectShortDescription: "A list of my web development projects and developer tools.",
-  projectLongDescription: "All of my projects, including both frontend and full-stack applications.",
+  projectShortDescription: "A list of my modellingprojects and analytical tools.",
+  projectLongDescription: "",
 
   // Profile image
-  profileImage: "michael-dam-unsplash.webp",
+  profileImage: "profile-pic.png",
 
   // Menu items
   menu: {
     home: "/",
     projects: "/projects",
     blog: "/blog",
-  }
+    resources: "/resources",
+  },
+
+  // Resources metadata
+  resourcesTitle: "Resources",
+  resourcesShortDescription: "Useful resources and guides",
+  resourcesLongDescription: "Collection of helpful resources, guides, and documentation.",
 };

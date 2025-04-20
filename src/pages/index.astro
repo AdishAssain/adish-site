@@ -2,7 +2,6 @@
 import { featuredArticles, featuredProjects } from "../lib/featured";
 import { GLOBAL } from "../lib/variables";
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/home/Hero.astro";
 import Section from "../components/common/Section.astro";
 import FeaturedProjects from "../components/home/FeaturedProjects.astro";
 import FeaturedArticles from "../components/home/FeaturedArticles.astro";
@@ -10,41 +9,38 @@ import FeaturedArticles from "../components/home/FeaturedArticles.astro";
 
 <Layout>
   <Fragment slot="head">
-    <title>{GLOBAL.username} • {GLOBAL.shortDescription}</title>
-    <meta
-      name="description"
-      content={GLOBAL.longDescription}
-    />
-    <meta
-      property="og:title"
-      content={`${GLOBAL.username} • ${GLOBAL.shortDescription}`}
-    />
-    <meta
-      property="og:description"
-      content={GLOBAL.longDescription}
-    />
-    <meta property="og:image" content={`${GLOBAL.rootUrl}/zaggonaut.png`} /> 
-    <meta property="og:url" content={GLOBAL.rootUrl} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content={`${GLOBAL.username} • ${GLOBAL.shortDescription}`}
-    />
-    <meta
-      name="twitter:description"
-      content={GLOBAL.longDescription}
-    />
-    <meta name="twitter:image" content={`${GLOBAL.rootUrl}/zaggonaut.png`} />
-    <meta http-equiv="content-language" content="en" />
-    <meta name="language" content="English" />
-    <link rel="canonical" href={GLOBAL.rootUrl} />
+    <title>Conflicts and Conversations • {GLOBAL.username}</title>
+    <meta property="og:image" content="/profile-pic.png" />
   </Fragment>
-  <Section class="my-16">
-    <Hero />
+  
+  <Section class="my-16 flex items-center flex-wrap">
+    <img src="/profile-pic.png" alt="Profile Picture" class="w-48 h-48 rounded-full mr-8 mb-4 sm:mb-0" />
+    <div>
+      <h1 class="text-4xl sm:text-5xl font-display font-semibold mb-8">Conflicts and Conversations</h1>
+      <div class="prose dark:prose-invert max-w-none">
+        <p>
+          <a href="https://www.youtube.com/watch?v=BfnY9gn6ktk" class="underline">Complex adaptive systems</a> are characterised by the emergence of novel behaviours that cannot be predicted by conventional models, presenting unique challenges known as 'wicked problems'. These challenges are marked by deep uncertainty and interconnectedness, which make them difficult to define, comprehend, and resolve. To address such complex issues, a variety of frameworks and perspectives have been employed to explore the emergent properties of these systems and uncover patterns of behaviour that can inform decision-making and interventions. In situations like this, Post-Normal Science reminds us that when facts are unclear, stakes are high, and decisions need to be made fast, traditional methods might not be enough.
+        </p>
+
+        <p>
+          I am Adish Assain Illikkal, with a background in mathematical modelling and interdisciplinary science. Currently, I serve as a Data Science Fellow at the Data Science Innovation Hub (DSIH) at <a href="https://artpark.in/" class="underline">ARTPARK-IISc</a>. ARTPARK focuses on translational research for social impact, bringing together data scientists, researchers, policymakers, tech-startups and other stakeholders. I'm part of the One Health Team, dedicated to developing and evaluting forecast models for effective monitoring and control of climate-sensitive diseases like dengue. Our efforts include creating a decision support system to enable government officials to make informed decisions for disease management and interventions. My current focus is on developing mechanistic models for scenario analysis and long-term strategies, with an emphasis on projecting disease dynamics and assessing the impact of various interventions.
+        </p>
+
+        <p>
+          At the <a href="https://www.iiserpune.ac.in/" class="underline">Indian Institute of Science Education and Research, Pune</a>, I have worked on a variety of topics involving resilience and tipping points ranging from to earth systems to socio-ecological systems under <a href="https://icts.res.in/people/amit-apte" class="underline">Dr Amit Apte</a>. I have applied mathematical methods and concepts, including dynamical systems theory, stability analysis, generalised modelling, and complex networks, across a range of projects.
+        </p>
+
+        <p>
+          I draw inspiration from the writings of Gilles Deleuze, as well as the works of Andrei Saltelli and Nassim Taleb. I appreciate social commentary podcasts, top-class cinema, hip-hop, world music, and pre-modern aesthetics, among others.
+        </p>
+      </div>
+    </div>
   </Section>
+  
   <Section>
     <FeaturedProjects featuredProjects={featuredProjects} />
   </Section>
+  
   <Section>
     <FeaturedArticles featuredArticles={featuredArticles} />
   </Section>

@@ -1,0 +1,51 @@
+---
+import { GLOBAL } from "../../lib/variables";
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/common/Section.astro";
+import { resources } from "../../lib/list";
+import ResourceSnippet from "../../components/ResourceSnippet.astro";
+---
+
+<Layout>
+  <Fragment slot="head">
+    <title>{GLOBAL.resourcesTitle} • {GLOBAL.username}</title>
+    <meta
+      name="description"
+      content={GLOBAL.resourcesLongDescription}
+    />
+    <meta property="og:title" content={`${GLOBAL.resourcesTitle} • ${GLOBAL.username}`} />
+    <meta
+      property="og:description"
+      content={GLOBAL.resourcesShortDescription}
+    />
+    <meta property="og:image" content={`${GLOBAL.rootUrl}/${GLOBAL.profileImage}`} />
+    <meta property="og:url" content={`${GLOBAL.rootUrl}/resources`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${GLOBAL.resourcesTitle} • ${GLOBAL.username}`} />
+    <meta
+      name="twitter:description"
+      content={GLOBAL.resourcesShortDescription}
+    />
+    <meta name="twitter:image" content={`${GLOBAL.rootUrl}/${GLOBAL.profileImage}`} />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="language" content="English" />
+    <link rel="canonical" href={`${GLOBAL.rootUrl}/resources`} />
+  </Fragment>
+  <Section class="my-8">
+    <div class="flex items-center gap-4 pt-8 pb-16">
+      <h1 class="font-display text-3xl sm:text-4xl leading-loose">{GLOBAL.resourcesTitle}</h1>
+    </div>
+    <ul class="flex flex-col gap-8">
+      {Object.values(resources).map((resource) => (
+        <li>
+          <ResourceSnippet
+            title={resource.frontmatter.title}
+            description={resource.frontmatter.description}
+            url={resource.frontmatter.filename}
+            tags={resource.frontmatter.tags ?? []}
+          />
+        </li>
+      ))}
+    </ul>
+  </Section>
+</Layout>

@@ -36,20 +36,18 @@ import { articles } from "../../lib/list";
     <div class="flex items-center gap-4 pt-8 pb-16">
       <h1 class="font-display text-3xl sm:text-4xl leading-loose">{GLOBAL.articlesName}</h1>
     </div>
-    <ul>
-      {
-        articles.map((project) => (
-          <li>
-            <ArticleSnippet
-              title={project.title}
-              description={project.description}
-              duration={`${project.time} min`}
-              url={project.filename}
-              timestamp={project.timestamp}
-            />
-          </li>
-        ))
-      }
+    <ul class="flex flex-col gap-8">
+      {articles.map((article) => (
+        <li>
+          <ArticleSnippet
+            title={article.title}
+            description={article.description}
+            duration={`${article.time} min`}
+            url={article.filename}
+            timestamp={article.timestamp}
+          />
+        </li>
+      ))}
     </ul>
   </Section>
 </Layout>
